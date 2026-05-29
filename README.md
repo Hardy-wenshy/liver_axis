@@ -21,3 +21,6 @@ pip install -r requirements.txt
 =======
 # liver_axis
 A computational framework for analyzing spatial gradients and tissue zonation patterns using  spatial transcriptomics data.
+
+#Usage
+python main.py --input data.h5ad --sample_name liver_sample --output_dir results

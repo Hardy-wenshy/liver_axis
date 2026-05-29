@@ -12,7 +12,6 @@ DEFAULT_PV_MARKERS = [
     "CYP2A7", "MGP", "A2M", "FXYD2", "CCL21", "HAL", "IGFBP2", "SDS",
     "AQP1", "CYP2A6", "FBLN1", "PTGDS"
 ]
-
 # Algorithm parameters
 DEFAULT_KNN_K = 8
 DEFAULT_ALPHA = 2.0

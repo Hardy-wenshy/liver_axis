@@ -1,0 +1,24 @@
+"""Configuration parameters for spatial axis analysis"""
+
+# Default marker genes
+DEFAULT_CV_MARKERS = [
+    "CYP3A4", "ADH1B", "CYP1A2", "CYP2E1", "APOA2", "APOC1", "ADH4", "ADH1A",
+    "APOH", "AMBP", "GSTA2", "ADH1C", "SLCO1B3", "AOX1", "APOA5", "DCXR",
+    "RBP4", "OAT", "CYP2C19", "GC"
+]
+
+DEFAULT_PV_MARKERS = [
+    "SERPINA1", "APOA1", "ALB", "C7", "NNMT", "HAMP", "ALDOB", "ASS1",
+    "CYP2A7", "MGP", "A2M", "FXYD2", "CCL21", "HAL", "IGFBP2", "SDS",
+    "AQP1", "CYP2A6", "FBLN1", "PTGDS"
+]
+
+# Algorithm parameters
+DEFAULT_KNN_K = 8
+DEFAULT_ALPHA = 2.0
+DEFAULT_MIN_PROB = 1e-4
+DEFAULT_N_ITER = 100
+DEFAULT_RESTART_PROB = 0.05
+DEFAULT_STD_MULTIPLIER = 1.0
+DEFAULT_TOP_N_GENES = 10
+DEFAULT_FLOW_SCALE = 1000

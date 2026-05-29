@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Spatial Axis Analysis for Tissue Zonation
 
 A computational framework for analyzing spatial gradients and tissue zonation patterns using single-cell or spatial transcriptomics data.
@@ -20,3 +21,7 @@ cd spatial_axis
 
 # Install dependencies
 pip install -r requirements.txt
+=======
+# liver_axis
+A computational framework for analyzing spatial gradients and tissue zonation patterns using single-cell or spatial transcriptomics data.
+>>>>>>> b95ec7ba14e11779e063d3cab9784d6481668182

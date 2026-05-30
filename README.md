@@ -1,6 +1,6 @@
 # Spatial Axis Analysis for Tissue Zonation
 
-A computational framework for analyzing spatial gradients and tissue zonation patterns using single-cell or spatial transcriptomics data.
+A computational framework for analyzing spatial gradients and tissue zonation patterns using  spatial transcriptomics data.
 
 ## Features
 
@@ -24,3 +24,5 @@ A computational framework for analyzing spatial gradients and tissue zonation pa
 
 #Usage
 python main.py --input data.h5ad --sample_name liver_sample --output_dir results
+
+The default marker is human genes, which can be modified in config.py

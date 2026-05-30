@@ -25,6 +25,14 @@ def detect_seeds_dynamic(pv_score, cv_score, std_multiplier=1.0):
     pv_threshold = np.median(pv_score) + std_multiplier * np.std(pv_score)
     cv_threshold = np.median(cv_score) + std_multiplier * np.std(cv_score)
     
+    print("PV score")
+    print(np.mean(pv_score))
+    print(np.std(pv_score))
+
+    print("CV score")
+    print(np.mean(cv_score))
+    print(np.std(cv_score))
+
     # Identify high-score indices
     pv_idx = np.where(pv_score > pv_threshold)[0]
     cv_idx = np.where(cv_score > cv_threshold)[0]

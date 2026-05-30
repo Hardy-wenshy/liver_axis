@@ -1,8 +1,9 @@
 """Main script for spatial axis analysis"""
-
+import anndata as ad
 import numpy as np
 import scanpy as sc
 import argparse
+import random
 import os
 from config import *
 from core import (
@@ -16,6 +17,11 @@ from core import (
 )
 from plotting import plot_spatial_results, plot_deg_heatmap
 from utils import filter_tissue, export_deg_results
+
+
+
+
+
 
 
 def process_sample(adata, sample_name, cv_markers=None, pv_markers=None, 
@@ -73,11 +79,11 @@ def process_sample(adata, sample_name, cv_markers=None, pv_markers=None,
     if "spatial" not in adata.obsm:
         raise ValueError("Spatial coordinates not found in adata.obsm['spatial']")
     coords = adata.obsm["spatial"]
-    
+
     # Compute marker scores
     print("  - Computing marker scores...")
-    pv_score = compute_marker_scores(adata, pv_markers, normalize=True)
-    cv_score = compute_marker_scores(adata, cv_markers, normalize=False)
+    pv_score = compute_marker_scores(adata, pv_markers)
+    cv_score = compute_marker_scores(adata, cv_markers)
     net_score = compute_net_score(pv_score, cv_score)
     
     # Detect seeds
@@ -147,8 +153,11 @@ def main():
     
     # Load data
     print(f"Loading data from {args.input}...")
-    adata = sc.read_h5ad(args.input)
+    adata = ad.read_h5ad(args.input)
     
+    sc.pp.normalize_total(adata, target_sum=1e4)
+    sc.pp.log1p(adata)
+
     # Process sample
     result_adata = process_sample(
         adata,
